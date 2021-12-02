@@ -1,18 +1,18 @@
 use std::fs;
 
-fn main() {
-  let input: String = load_input();
-  let input_array: Vec<&str> = input.split("\n").collect();
-  let input_array_int: Vec<i32> = input_array.iter().map(|x| x.parse::<i32>().unwrap()).collect();
-  let result = count_larger_than_previous(input_array_int);
-  println!("{}", result);
+pub fn run() {
+    let input: String = load_input();
+    let input_array: Vec<&str> = input.split("\n").collect();
+    let input_array_int: Vec<i32> = input_array.iter().map(|x| x.parse::<i32>().unwrap()).collect();
+    let result = count_larger_than_previous(input_array_int);
+    println!("{}", result);
 }
 
 // load input.txt into a string
 fn load_input() -> String {
-    let filename = "input.txt";
+    let filename = fs::canonicalize("src/day01/input.txt").unwrap();
     let contents = fs::read_to_string(filename).expect("Something went wrong reading the file");
-    return contents
+    return contents;
 }
 
 // map over the array always add the next 3 elements and compare to the next 3 elements

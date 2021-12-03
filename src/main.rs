@@ -10,4 +10,5 @@ fn main() {
 
     println!("DAY 02");
     day02::exercise1::run();
+    day02::exercise2::run();
 }

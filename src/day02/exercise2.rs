@@ -1,7 +1,7 @@
 use std::fs;
 
 pub fn run() {
-    println!("Running exercise1");
+    println!("Running exercise2");
     let input_array = load_input();
     let result = calculate_movements(input_array);
     println!("Result: {}", result);
